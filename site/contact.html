@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LNP Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="contents/css/style.css">
+</head>
+
+<body>
+    <header id="header">
+        <a href=""><img src="images/logoShop.png" class="logo"></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Trang Chủ</a></li>
+                <li><a href="shop.html">Cửa Hàng</a></li>
+                <li><a href="blog.html">Tin Tức</a></li>
+                <li><a href="about.html">Giới Thiệu</a></li>
+                <li><a href="contact.html">Liên Hệ</a></li>
+                <li><a href="../admin/index.html">Trang Admin</a></li>
+                <li id="lg-search"><a class="openBtn" onclick="openSearch()"><i class="fa fa-search"></i></a></li>
+                <li id='lg-user'><a href=""><i class='fa-solid fa-user'></i></a></li>
+                <li id="lg-bag"><a href=""><i class="fa-solid fa-bag-shopping"></i></a></li>
+                <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a class="openBtn" onclick="openSearch()"><i class="fa fa-search"></i></a>
+            <a href=""><i class="fa-solid fa-user"></i></a>
+            <a href=""><i class="fa-solid fa-user"></i></a>
+            <a href=""><i class="fa-solid fa-user"></i></a>
+            <a href=""><i class="fa-solid fa-bag-shopping"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+
+        <div id="myOverlay" class="overlay">
+            <span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
+            <div class="overlay-content">
+                <form method="POST" action="">
+                    <input type="text" placeholder="Search.." name="txt_search">
+                    <button type="submit" class="btn" name="search"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+    </header>
+    <script>
+        function openSearch() {
+            document.getElementById("myOverlay").classList.add('show-search');
+        }
+
+        function closeSearch() {
+            document.getElementById("myOverlay").classList.remove('show-search');
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script src="contents/js/menu.js"></script>
+    <script src="contents/js/slickSlider.js"></script>
+
+    <script>
+        var mainImg = document.getElementById('mainImg');
+        var smallImg = document.getElementsByClassName('smallImg');
+
+        smallImg[0].onclick = function () {
+            mainImg.src = smallImg[0].src;
+        }
+        smallImg[1].onclick = function () {
+            mainImg.src = smallImg[1].src;
+        }
+        smallImg[2].onclick = function () {
+            mainImg.src = smallImg[2].src;
+        }
+        smallImg[3].onclick = function () {
+            mainImg.src = smallImg[3].src;
+        }
+    </script>
+
+    <section id="page-header" class="contact-header">
+
+        <h2>Liên Hệ</h2>
+        <p>ĐỂ LẠI LỜI NHẮN, Chúng tôi muốn nghe từ bạn!</p>
+
+    </section>
+
+    <section id="contact-details" class="section-p1">
+        <div class="details">
+            <span>LIÊN LẠC</span>
+            <h2>Ghé thăm một trong các địa điểm đại lý của chúng tôi hoặc liên hệ với chúng tôi ngay</h2>
+            <h3>Trụ Sở</h3>
+            <div>
+                <li>
+                    <i class="fa-solid fa-map"></i>
+                    <p>FPT POLYTECHNICH CAN THO</p>
+                </li>
+                <li>
+                    <i class="fa-solid fa-envelope"></i>
+                    <p>nghiatnpc07595@fpt.edu.vn</p>
+                </li>
+                <li>
+                    <i class="fa-solid fa-phone"></i>
+                    <p>0338-433-630</p>
+                </li>
+                <li>
+                    <i class="fa-solid fa-map"></i>
+                    <p>Thứ Hai đến Thứ Bảy 6.00am đến 20.pm</p>
+                </li>
+            </div>
+        </div>
+        <div class="map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1854.438891275633!2d105.75873364589829!3d9.982212310783838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1svi!2s!4v1686586109699!5m2!1svi!2s"
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+    </section>
+
+    <section id="newsletter" class="section-p1 section-m1">
+        <div class="newstext">
+            <h4>Giải quyết mọi thắc mắc</h4>
+            <p>Điền thắc mắc câu hỏi của bạn để được chúng tôi hỗ trợ <span>nhanh nhất có thể.</span></p>
+        </div>
+        <form method="post" class="form">
+            <input name="question" type="text" placeholder="Vấn đề bạn gặp phải ?">
+            <button name="sendQuestion" class="normal">Gửi</button>
+        </form>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+            <h4>Liện Hệ</h4>
+            <p><strong>Địa Chỉ:</strong> Đồng Phú, Long Hồ, Vĩnh Long, Việt Nam</p>
+            <p><strong>Điện Thoại:</strong> 0338 433 630</p>
+            <p><strong>Giờ Làm Việt:</strong> 6:00 Am - 20:00 PM, Mọi này trong tuần</p>
+
+            <div class="follow">
+                <h4>Mạng Xã Hội</h4>
+                <div class="icon">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-pinterest-p"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <h4>Giới Thiệu</h4>
+            <a href="#">Giới Thiệu LNP Store</a>
+            <a href="#">Thông Tin Giao Hàng</a>
+            <a href="#">Chính Sách Bảo Mật</a>
+            <a href="#">Điều Khoản & Điều Kiện</a>
+            <a href="#">Liên Hệ</a>
+        </div>
+        <div class="col">
+            <h4>Tài Khoản</h4>
+            <a href="#">Đăng Nhập</a>
+            <a href="#">Xem Giỏ Hàng</a>
+            <a href="#">Danh Sách Yêu Thích</a>
+            <a href="#">Theo Dỗi Đơn Hàng</a>
+            <a href="#">Hỗ Trợ</a>
+        </div>
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+                <img src="images/app.jpg">
+                <img src="images/play.jpg">
+            </div>
+            <img class="logo" src="images/logoShop.png">
+        </div>
+    </footer>
+</body>
+
+</html>

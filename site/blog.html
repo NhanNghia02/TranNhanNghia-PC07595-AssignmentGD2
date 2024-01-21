@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LNP Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="contents/css/style.css">
+</head>
+
+<body>
+    <header id="header">
+        <a href=""><img src="images/logoShop.png" class="logo"></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Trang Chủ</a></li>
+                <li><a href="shop.html">Cửa Hàng</a></li>
+                <li><a href="blog.html">Tin Tức</a></li>
+                <li><a href="about.html">Giới Thiệu</a></li>
+                <li><a href="contact.html">Liên Hệ</a></li>
+                <li><a href="../admin/index.html">Trang Admin</a></li>
+                <li id="lg-search"><a class="openBtn" onclick="openSearch()"><i class="fa fa-search"></i></a></li>
+                <li id='lg-user'><a href=""><i class='fa-solid fa-user'></i></a></li>
+                <li id="lg-bag"><a href=""><i class="fa-solid fa-bag-shopping"></i></a></li>
+                <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a class="openBtn" onclick="openSearch()"><i class="fa fa-search"></i></a>
+            <a href=""><i class="fa-solid fa-user"></i></a>
+            <a href=""><i class="fa-solid fa-user"></i></a>
+            <a href=""><i class="fa-solid fa-user"></i></a>
+            <a href=""><i class="fa-solid fa-bag-shopping"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+
+        <div id="myOverlay" class="overlay">
+            <span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
+            <div class="overlay-content">
+                <form method="POST" action="">
+                    <input type="text" placeholder="Search.." name="txt_search">
+                    <button type="submit" class="btn" name="search"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+    </header>
+    <script>
+        function openSearch() {
+            document.getElementById("myOverlay").classList.add('show-search');
+        }
+
+        function closeSearch() {
+            document.getElementById("myOverlay").classList.remove('show-search');
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script src="contents/js/menu.js"></script>
+    <script src="contents/js/slickSlider.js"></script>
+
+    <script>
+        var mainImg = document.getElementById('mainImg');
+        var smallImg = document.getElementsByClassName('smallImg');
+
+        smallImg[0].onclick = function () {
+            mainImg.src = smallImg[0].src;
+        }
+        smallImg[1].onclick = function () {
+            mainImg.src = smallImg[1].src;
+        }
+        smallImg[2].onclick = function () {
+            mainImg.src = smallImg[2].src;
+        }
+        smallImg[3].onclick = function () {
+            mainImg.src = smallImg[3].src;
+        }
+    </script>
+
+    <section id="blog-header">
+
+    </section>
+
+    <section id="blog">
+        <h2>Tin Tức Cập Nhật</h2>
+        <div class="blog-box">
+            <div class="blog-img">
+                <img src="images/bg/blog01.jpeg">
+            </div>
+            <div class="blog-details">
+                <h4>Redmi K70e bất ngờ lộ video</h4>
+                <p>Video trên tay cho thấy Redmi K70e, sử dụng chipset Dimensity 8300-Ultra, hoạt động như thế nào trong
+                    nhiều bài kiểm tra điểm chuẩn như AnTuTu, Geekbench, 3D Mark và các bài test khác. Ngoài ra, video
+                    còn tiết lộ thông số kỹ thuật chi tiết của điện thoại....</p>
+                <a href="#">Xem chi tiết</a>
+            </div>
+        </div>
+        <div class="blog-box">
+            <div class="blog-img">
+                <img src="images/bg/blog02.jpeg" alt="">
+            </div>
+            <div class="blog-details">
+                <h4>Vivo Y12 âm thầm ra mắt với chip Helio G85</h4>
+                <p>Cụ thể, vivo Y12 được trang bị màn hình LCD có kích thước 6.56 inch, hỗ trợ độ phân giải HD+ (1,612 x
+                    720 pixel), tần số quét 60Hz tiêu chuẩn, tỷ lệ tương phản 1,500:1, sử dụng thiết kế notch hình giọt
+                    nước để chứa camera selfie và chiếm tới 90% diện tích mặt trước...</p>
+                <a href="#">Xem chi tiết</a>
+            </div>
+        </div>
+        <div class="blog-box">
+            <div class="blog-img">
+                <img src="images/bg/blog03.jpeg" alt="">
+            </div>
+            <div class="blog-details">
+                <h4>Xiaomi 14 Ultra và vivo X100 Ultra sẽ ra mắt vào tháng 4/2024</h4>
+                <p>Ngoài thông tin mẫu flagship tiếp theo đến từ Xiaomi, rò rỉ hôm nay cho biết Huawei P70 và vivo X100
+                    Ultra cũng sẽ lần lượt ra mắt vào tháng 3 và tháng 4 năm sau. Một thông tin thú vị khác được tiết lộ
+                    qua rò rỉ cho thấy vivo X100 Pro+ sẽ được gọi là X100 Ultra. Không giống như vivo X100 và X100 Pro,
+                    mẫu flagship tiếp theo của vivo được đồn đoán sẽ ra mắt với SoC Snapdragon 8 Gen 3 mạnh mẽ....</p>
+                <a href="#">Xem chi tiết</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="pagination" class="section-p1">
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#"><i class="fa-solid fa-arrow-right-long"></i></a>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+            <h4>Liện Hệ</h4>
+            <p><strong>Địa Chỉ:</strong> Đồng Phú, Long Hồ, Vĩnh Long, Việt Nam</p>
+            <p><strong>Điện Thoại:</strong> 0338 433 630</p>
+            <p><strong>Giờ Làm Việt:</strong> 6:00 Am - 20:00 PM, Mọi này trong tuần</p>
+
+            <div class="follow">
+                <h4>Mạng Xã Hội</h4>
+                <div class="icon">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-pinterest-p"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <h4>Giới Thiệu</h4>
+            <a href="#">Giới Thiệu LNP Store</a>
+            <a href="#">Thông Tin Giao Hàng</a>
+            <a href="#">Chính Sách Bảo Mật</a>
+            <a href="#">Điều Khoản & Điều Kiện</a>
+            <a href="#">Liên Hệ</a>
+        </div>
+        <div class="col">
+            <h4>Tài Khoản</h4>
+            <a href="#">Đăng Nhập</a>
+            <a href="#">Xem Giỏ Hàng</a>
+            <a href="#">Danh Sách Yêu Thích</a>
+            <a href="#">Theo Dỗi Đơn Hàng</a>
+            <a href="#">Hỗ Trợ</a>
+        </div>
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+                <img src="images/app.jpg">
+                <img src="images/play.jpg">
+            </div>
+            <img class="logo" src="images/logoShop.png">
+        </div>
+    </footer>
+</body>
+
+</html>
