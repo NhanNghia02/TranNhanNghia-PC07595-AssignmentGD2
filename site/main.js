@@ -27,6 +27,40 @@ fetch(" http://localhost:3000/categories")
         console.log("Xử lý lỗi", error);
     });
 
+//Xử lý Categories
+fetch(" http://localhost:3000/categories")
+    .then(function (resprose) {
+        resprose.json().then(function (data) {
+            let app = document.getElementById('cateLish');
+
+            let lishCate = data;
+
+            let html = ``;
+
+            lishCate.forEach(categories => {
+
+                html += `
+                    <tr>
+                        <td>${categories.id}</td>
+                        <td>${categories.name}</td>
+                        <td><img src="${categories.image}" alt="Image Shirt" width="30%"></td>
+                        <td>${categories}</td>
+                        <td style="text-align: center;"><a href="" class="nav-link"><i
+                                    class="fa-solid fa-pen-to-square"></i></a></td>
+                        <td onclick=" return confirm('Bạn có chắc rằng muốn xóa ?');"
+                            style="text-align: center;"><a href="" class="nav-link"><i class="fa-regular fa-circle-xmark"></i></a></td>
+                    </tr>`;
+
+            });
+
+            app.innerHTML = html;
+            console.log(data);
+        })
+    })
+    .catch(function (error) {
+        console.log("Xử lý lỗi", error);
+    });
+
 //Xử lý Products
 fetch(" http://localhost:3000/products")
     .then(function (resprose) {

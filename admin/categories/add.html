@@ -13,16 +13,20 @@
 
     <!-- Custom fonts for this template-->
     <link href="contents/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="contents/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="../contents/css/sb-admin-2.min.css" rel="stylesheet">
 
     <!-- Custom styles for this dataTables -->
     <link href="contents/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
     <!-- Fort awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 
@@ -35,45 +39,44 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fa-solid fa-mobile"></i>
-                </div> 
+                </div>
                 <div class="sidebar-brand-text mx-3">LNP Store</div>
-            
+
             </a>
-        
+
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
-        
+
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="../index.html">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Thống Kê</span></a>
             </li>
-        
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
-        
+
             <!-- Nav Item - list categories -->
             <li class="nav-item">
-                <a class="nav-link" href="./categories/list.html">
-                <i class="fa-solid fa-mobile-screen-button"></i>
+                <a class="nav-link" href="list.html">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
                     <span>Loại Sản Phẩm</span></a>
             </li>
             <!-- Divider -->
             <hr class="sidebar-divider">
-        
+
             <!-- Nav Item - list products -->
             <li class="nav-item">
                 <a class="nav-link" href="">
                     <i class="fa-solid fa-shop"></i>
                     <span>Sản Phẩm</span></a>
-            </li>  
+            </li>
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
-        
+
             <!-- Nav Item - list user -->
             <li class="nav-item">
                 <a class="nav-link" href="">
@@ -82,7 +85,7 @@
             </li>
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
-        
+
             <!-- Nav Item - list comment -->
             <li class="nav-item">
                 <a class="nav-link" href="">
@@ -91,7 +94,7 @@
             </li>
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
-        
+
             <!-- Nav Item - list question -->
             <li class="nav-item">
                 <a class="nav-link" href="">
@@ -100,7 +103,7 @@
             </li>
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
-        
+
             <!-- Nav Item - list order -->
             <li class="nav-item">
                 <a class="nav-link" href="">
@@ -109,14 +112,14 @@
             </li>
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
-        
+
             <!-- Nav Item - Trang Site -->
             <li class="nav-item">
                 <a class="nav-link" href="../site/index.html">
                     <i class="fa-solid fa-repeat"></i>
                     <span>Trang User</span></a>
             </li>
-        
+
         </ul>
         <!-- End of Sidebar -->
 
@@ -127,32 +130,74 @@
             <div id="content">
 
                 <!-- Topbar -->
-                
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">loctvpc06110@fpt.edu.vn</span>
+                                <i class="fa-solid fa-user"></i>
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+                </nav>
                 <!-- End of Topbar -->
-
                 <!-- Begin Page Content -->
+
                 <div class="container-fluid">
-
-
-
+                    <div class="card-header">
+                        <h2>Thêm Loại Hàng</h2>
+                    </div>
+                    <form method="post" enctype="multipart/form-data">
+                        <div class="form-floating mb-3 mt-3">
+                            <label>Tên</label>
+                            <input type="text" class="form-control" placeholder="Nhập tên loại hàng" name="cateName"
+                                required>
+                        </div>
+                        <div class="form-floating mb-3 mt-3">
+                            <label>Hình ảnh</label>
+                            <input type="file" class="form-control" name="cateImage" required>
+                        </div>
+                        <div class="form-floating mb-3 mt-3">
+                            <label>Tình Trạng</label>
+                            <select class="form-control" name="status">
+                                <option value="Còn kinh doanh">Còn kinh doanh</option>
+                                <option value="Ngừng kinh doanh">Ngừng kinh doanh</option>
+                            </select>
+                        </div>
+                        <button name="addCate" class="btn btn-primary">Thêm</button>
+                    </form>
                 </div>
-                <!-- /.container-fluid -->
 
             </div>
-            <!-- End of Main Content -->
+            <!-- /.container-fluid -->
+            
+        <!-- End of Main Content -->
 
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>LNP Store &copy; Cửa Hàng Điện Thoại Uy Tín - Chất Lượng</span>
-                    </div>
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>LNP Store &copy; Cửa Hàng Điện Thoại Uy Tín - Chất Lượng</span>
                 </div>
-            </footer>
-            <!-- End of Footer -->
+            </div>
+        </footer>
+        <!-- End of Footer -->
 
-        </div>
-        <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Content Wrapper -->
 
     </div>
     <!-- End of Page Wrapper -->
@@ -181,7 +226,6 @@
     <script src="contents/js/demo/datatables-demo.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
     <script src="main.js"></script>
 </body>
 
