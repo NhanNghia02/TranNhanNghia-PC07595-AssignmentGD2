@@ -1,4 +1,32 @@
 
+//Xử lý Categories
+fetch(" http://localhost:3000/categories")
+    .then(function (resprose) {
+        resprose.json().then(function (data) {
+            let app = document.getElementById('categories');
+
+            let lishCate = data;
+
+            let categoriesId = categories.id = products.cate_id;
+
+            let html = ``;
+
+            lishCate.forEach(categories => {
+
+                html += `<a href="categoriesdm.html?id=${categoriesId}">
+                <img src="${categories.image}" alt="Image Shirt" width="150px">
+                </a>`;
+
+            });
+
+            app.innerHTML = html;
+            console.log(data);
+        })
+    })
+    .catch(function (error) {
+        console.log("Xử lý lỗi", error);
+    });
+
 //Xử lý Products
 fetch(" http://localhost:3000/products")
     .then(function (resprose) {
@@ -148,33 +176,7 @@ fetch(" http://localhost:3000/products")
         console.log("Xử lý lỗi", error);
     });
 
-//Xử lý Categories
-fetch(" http://localhost:3000/categories")
-    .then(function (resprose) {
-        resprose.json().then(function (data) {
-            let app = document.getElementById('categories');
 
-            let lishCate = data;
-
-            let categoriesId = categories.id = products.cate_id;
-
-            let html = ``;
-
-            lishCate.forEach(categories => {
-
-                html += `<a href="categoriesdm.html?id=${categoriesId}">
-                <img src="${categories.image}" alt="Image Shirt" width="150px">
-                </a>`;
-
-            });
-
-            app.innerHTML = html;
-            console.log(data);
-        })
-    })
-    .catch(function (error) {
-        console.log("Xử lý lỗi", error);
-    });
 
 
 
