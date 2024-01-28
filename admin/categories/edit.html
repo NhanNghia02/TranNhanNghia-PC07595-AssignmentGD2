@@ -1,29 +1,3 @@
-<?php
-if (isset($_GET['id'])) {
-    $id = $_GET['id'];
-
-    $db = new Category();
-    $row = $db->getByID($id);
-
-    if (isset($_POST['editCate'])) {
-        $name = $_POST['categoryName'];
-        $images = $_FILES['image']['name'];
-        if (isset($_FILES['image'])) {
-            $file = $_FILES['image'];
-            $file_name = $file['name'];
-            if (empty($file_name)) {
-                $file_name = $row['images'];
-            } else {
-                move_uploaded_file($file['tmp_name'], '../images/prod/' . $file_name);
-            }
-        }
-        $status = $_POST['status'];
-        $edit = $db->update($name, $status, $images, $row['cate_id']);
-        echo "<script>document.location='index.php?page=listCategories';</script>";
-    }
-}
-?>
-
 
     <div class="container-fluid">
         <div class="card-header">
@@ -37,7 +11,7 @@ if (isset($_GET['id'])) {
             <div class="form-floating mb-3 mt-3">
                 <label>Hình ảnh</label>
                 <input type="file" class="form-control" name="image">
-                <img src="../images/prod/<?= $row['images'] ?>" alt="" width="150px">
+                <img src="" alt="" width="150px">
             </div>
             <div class="form-floating mb-3 mt-3">
                 <label>Tình Trạng</label>
