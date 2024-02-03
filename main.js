@@ -19,7 +19,8 @@ fetch(" http://localhost:3000/categories")
                         <td style="text-align: center;"><a href="" class="nav-link"><i
                                     class="fa-solid fa-pen-to-square"></i></a></td>
                         <td onclick=" return confirm('Bạn có chắc rằng muốn xóa ?');"
-                            style="text-align: center;"><a href="" class="nav-link"><i class="fa-regular fa-circle-xmark"></i></a></td>
+                            style="text-align: center;"><a href="" class="nav-link"><i 
+                                    class="fa-regular fa-circle-xmark"></i></a></td>
                     </tr>`;
 
             });
@@ -219,7 +220,7 @@ fetch(" http://localhost:3000/products")
             let html = ``;
 
             lishProd.forEach(products => {
-                
+
                 html += `
                 <tr>
                     <td>
