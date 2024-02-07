@@ -160,13 +160,7 @@
                     <div class="card-header">
                         <h2>Chỉnh Sửa Sản Phẩm</h2>
                     </div>
-                    <form action="" method="post" enctype="multipart/form-data">
-                        <label>Danh mục sản phẩm: </label>
-                        <select name="cate_id" class="form-floating mb-3 mt-3">
-
-                            <option></option>
-
-                        </select>
+                    <form action="../products/list.html" id="addFormProd">
                         <div class="form-floating mb-3 mt-3">
                             <label>Tên sản phẩm</label>
                             <input type="text" class="form-control" placeholder="Nhập tên sản phẩm" name="cateName"
@@ -182,6 +176,16 @@
                                 required>
                         </div>
                         <div class="form-floating mb-3 mt-3">
+                            <label>Khuyến mãi</label>
+                            <input type="text" class="form-control" placeholder="Giá khuyến mãi sản phẩm"
+                                name="cateName" required>
+                        </div>
+                        <div class="form-floating mb-3 mt-3">
+                            <label>Tên thương hiệu</label>
+                            <input type="text" class="form-control" placeholder="Nhập tên thương hiệu" name="cateName"
+                                required>
+                        </div>
+                        <div class="form-floating mb-3 mt-3">
                             <label>Tình Trạng</label>
                             <select class="form-control" name="status">
                                 <option value="Còn kinh doanh">Còn kinh doanh</option>
@@ -190,7 +194,7 @@
                         </div>
                         </select>
 
-                        <button tyle="submit" name="addCate" class="btn btn-primary">Thêm</button>
+                        <button tyle="submit" name="editCate" class="btn btn-primary">Sửa</button>
                     </form>
                 </div>
 
@@ -240,7 +244,10 @@
     <script src="contents/js/demo/datatables-demo.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="../../main.js"></script>
+
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    
+    <script src="../module.js"></script>
 </body>
 
 </html>

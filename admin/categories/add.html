@@ -161,24 +161,27 @@
                     <div class="card-header">
                         <h2>Thêm Loại Hàng</h2>
                     </div>
-                    <form method="post" enctype="multipart/form-data">
+                    <form action="../categories/list.html" id="addFormCate">
                         <div class="form-floating mb-3 mt-3">
-                            <label>Tên</label>
-                            <input type="text" class="form-control" placeholder="Nhập tên loại hàng" name="cateName"
-                                required>
+                            <label for="cateId">ID loại</label>
+                            <input type="text" id="cateId" name="cateId" class="form-control" placeholder="Nhập tên loại hàng">
                         </div>
                         <div class="form-floating mb-3 mt-3">
-                            <label>Hình ảnh</label>
-                            <input type="file" class="form-control" name="cateImage" required>
+                            <label for="cateName">Tên loại</label>
+                            <input type="text" id="cateName" name="cateName" class="form-control" placeholder="Nhập tên loại hàng">
                         </div>
                         <div class="form-floating mb-3 mt-3">
-                            <label>Tình Trạng</label>
-                            <select class="form-control" name="status">
+                            <label for="cateImage">Hình ảnh</label>
+                            <input type="file" id="cateImage" name="cateImage" class="form-control">
+                        </div>
+                        <div class="form-floating mb-3 mt-3">
+                            <label for="cateStatus">Tình Trạng</label>
+                            <select id="cateStatus" name="cateStatus" class="form-control">
                                 <option value="Còn kinh doanh">Còn kinh doanh</option>
                                 <option value="Ngừng kinh doanh">Ngừng kinh doanh</option>
                             </select>
                         </div>
-                        <button name="addCate" class="btn btn-primary">Thêm</button>
+                        <button type="submit" class="btn btn-primary">Thêm</button>
                     </form>
                 </div>
 
@@ -227,7 +230,10 @@
     <script src="contents/js/demo/datatables-demo.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="../../main.js"></script>
+
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    
+    <script src="../module.js"></script>
 </body>
 
 </html>
