@@ -164,19 +164,19 @@
                     <form action="../categories/list.html" id="addFormCate">
                         <div class="form-floating mb-3 mt-3">
                             <label for="cateId">ID loại</label>
-                            <input type="text" id="cateId" name="cateId" class="form-control" placeholder="Nhập tên loại hàng">
+                            <input type="text" id="cateId" name="cateId" class="form-control" placeholder="Nhập tên loại hàng" required>
                         </div>
                         <div class="form-floating mb-3 mt-3">
                             <label for="cateName">Tên loại</label>
-                            <input type="text" id="cateName" name="cateName" class="form-control" placeholder="Nhập tên loại hàng">
+                            <input type="text" id="cateName" name="cateName" class="form-control" placeholder="Nhập tên loại hàng" required>
                         </div>
                         <div class="form-floating mb-3 mt-3">
                             <label for="cateImage">Hình ảnh</label>
-                            <input type="file" id="cateImage" name="cateImage" class="form-control">
+                            <input type="file" id="cateImage" name="cateImage" class="form-control" required>
                         </div>
                         <div class="form-floating mb-3 mt-3">
                             <label for="cateStatus">Tình Trạng</label>
-                            <select id="cateStatus" name="cateStatus" class="form-control">
+                            <select id="cateStatus" name="cateStatus" class="form-control" required>
                                 <option value="Còn kinh doanh">Còn kinh doanh</option>
                                 <option value="Ngừng kinh doanh">Ngừng kinh doanh</option>
                             </select>
@@ -231,7 +231,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     
     <script src="../module.js"></script>
 </body>

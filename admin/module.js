@@ -1,20 +1,25 @@
-const axios = require('axios').default;
+const axios = require('axios');
 
-//Thêm dữ liệu Categories
 const ADD_API = "http://localhost:3000/";
 
-const addData = {
-    id: document.getElementById('cateId').value,
-    name: document.getElementById('cateName').value,
-    status: document.getElementById('cateStatus').value,
-    image: document.getElementById('cateImage').files[0].name
-};
-
+//Thêm dữ liệu Categories
 document.getElementById('addFormCate').addEventListener('submit', function (event) {
     event.preventDefault();
 
+    //Trường input
+    const cateId = document.getElementById('cateId').value;
+    const cateName = document.getElementById('cateName').value;
+    const cateStatus = document.getElementById('cateStatus').value;
+    const cateImage = document.getElementById('cateImage').files[0];
+
+    const formData = new FormData();
+    formData.append('id', cateId);
+    formData.append('name', cateName);
+    formData.append('status', cateStatus);
+    formData.append('image', cateImage);
+
     // Gửi yêu cầu POST đến API để thêm dữ liệu
-    axios.post(ADD_API + "categories", addData)
+    axios.post(ADD_API + "categories", formData)
         .then((response) => {
             console.log("Dữ liệu đã được thêm thành công:", response.data);
         })
@@ -27,14 +32,13 @@ document.getElementById('addFormCate').addEventListener('submit', function (even
 //Sửa dữ liệu Categories
 function editData() {
 
-    // Địa chỉ API bạn muốn sửa dữ liệu
     const EDIT_URL = "http://localhost:3000/";
 
     // Hỏi người dùng nhập thông tin mới từ form
-    const idToEdit = document.getElementById("cateId").value;
-    const newName = document.getElementById("cateName").value;
-    const newImage = document.getElementById("cateImage").value;
-    const newStatus = document.getElementById("cateStatus").value;
+    const idToEdit = document.getElementById("cateId");
+    const newName = document.getElementById("cateName");
+    const newImage = document.getElementById("cateImage");
+    const newStatus = document.getElementById("cateStatus");
 
     // Dữ liệu mới để gửi đến API
     const updatedData = {
@@ -53,6 +57,7 @@ function editData() {
         });
 }
 editData();
+
 
 //Xóa dữ liệu Categories
 const DELETE_URL = "http://localhost:3000/";
