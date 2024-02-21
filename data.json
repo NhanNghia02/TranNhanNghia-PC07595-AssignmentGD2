@@ -29,12 +29,6 @@
       "name": "ASUS",
       "status": "Còn kinh doanh",
       "image": "https://24hstore.vn/images/products/cat/original/asus_1676951254.jpg"
-    },
-    {
-      "id": "6",
-      "name": "OPPO",
-      "status": "Còn kinh doanh",
-      "image": "https://24hstore.vn/images/products/cat/original/logo-oppo_1676952041.png"
     }
   ],
   "products": [
@@ -235,6 +229,15 @@
       "detail": "Đang bán",
       "status": "Còn kinh doanh",
       "image": "https://24hstore.vn/images/products/2024/01/02/original/asus-rog-phone-7-black-cu.jpg"
+    },
+    {
+      "id": "87a9",
+      "name": "GÀ RÁN",
+      "cate_name": "Samsung",
+      "price": "1090083",
+      "detail": "khuyến mãi 30%",
+      "status": "Ngừng kinh doanh",
+      "image": "dfsadsd"
     }
   ]
 }

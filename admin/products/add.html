@@ -160,41 +160,41 @@
                     <div class="card-header">
                         <h2>Thêm Sản Phẩm</h2>
                     </div>
-                    <form action="../products/list.html" id="addFormProd">
+                    <form id="form" onsubmit="addData(this)">
                         <div class="form-floating mb-3 mt-3">
                             <label>Tên sản phẩm</label>
-                            <input type="text" class="form-control" placeholder="Nhập tên sản phẩm" name="cateName"
+                            <input type="text" class="form-control" placeholder="Nhập tên sản phẩm" name="nameProd"
                                 required>
                         </div>
                         <div class="form-floating mb-3 mt-3">
                             <label>Ảnh sản phẩm</label>
-                            <input type="file" class="form-control" name="imageProd">
+                            <input type="text" class="form-control" placeholder="Nhập tên sản phẩm" name="imageProd">
                         </div>
                         <div class="form-floating mb-3 mt-3">
                             <label>Giá sản phẩm</label>
-                            <input type="text" class="form-control" placeholder="Giá sản phẩm" name="catePrice"
+                            <input type="text" class="form-control" placeholder="Giá sản phẩm" name="priceProd"
                                 required>
                         </div>
                         <div class="form-floating mb-3 mt-3">
                             <label>Khuyến mãi</label>
                             <input type="text" class="form-control" placeholder="Giá khuyến mãi sản phẩm"
-                                name="cateName" required>
+                                name="detailProd" required>
                         </div>
                         <div class="form-floating mb-3 mt-3">
                             <label>Tên thương hiệu</label>
-                            <input type="text" class="form-control" placeholder="Nhập tên thương hiệu" name="cateName"
+                            <input type="text" class="form-control" placeholder="Nhập tên thương hiệu" name="cateProd"
                                 required>
                         </div>
                         <div class="form-floating mb-3 mt-3">
                             <label>Tình Trạng</label>
-                            <select class="form-control" name="status">
+                            <select class="form-control" name="statusProd">
                                 <option value="Còn kinh doanh">Còn kinh doanh</option>
                                 <option value="Ngừng kinh doanh">Ngừng kinh doanh</option>
                             </select>
                         </div>
                         </select>
 
-                        <button tyle="submit" name="addCate" class="btn btn-primary">Thêm</button>
+                        <button tyle="submit" class="btn btn-primary">Thêm</button>
                     </form>
                 </div>
 

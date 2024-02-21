@@ -1,78 +1,388 @@
-const axios = require('axios');
+//-----------ADMIN-CATEGORIES-------------//
 
-const ADD_API = "http://localhost:3000/";
+//Hiển thị Categories
+const GET_API = "http://localhost:3000/";
 
-//Thêm dữ liệu Categories
-document.getElementById('addFormCate').addEventListener('submit', function (event) {
-    event.preventDefault();
-
-    //Trường input
-    const cateId = document.getElementById('cateId').value;
-    const cateName = document.getElementById('cateName').value;
-    const cateStatus = document.getElementById('cateStatus').value;
-    const cateImage = document.getElementById('cateImage').files[0];
-
-    const formData = new FormData();
-    formData.append('id', cateId);
-    formData.append('name', cateName);
-    formData.append('status', cateStatus);
-    formData.append('image', cateImage);
-
-    // Gửi yêu cầu POST đến API để thêm dữ liệu
-    axios.post(ADD_API + "categories", formData)
-        .then((response) => {
-            console.log("Dữ liệu đã được thêm thành công:", response.data);
-        })
-        .catch((error) => {
-            console.error("Đã có lỗi xảy ra khi thêm dữ liệu:", error);
-        });
-});
-
-
-//Sửa dữ liệu Categories
-function editData() {
-
-    const EDIT_URL = "http://localhost:3000/";
-
-    // Hỏi người dùng nhập thông tin mới từ form
-    const idToEdit = document.getElementById("cateId");
-    const newName = document.getElementById("cateName");
-    const newImage = document.getElementById("cateImage");
-    const newStatus = document.getElementById("cateStatus");
-
-    // Dữ liệu mới để gửi đến API
-    const updatedData = {
-        name: newName,
-        image: newImage,
-        status: newStatus
-    };
-
-    // Gửi yêu cầu PUT đến API để sửa dữ liệu
-    axios.put(EDIT_URL + "categories/" + idToEdit, updatedData)
-        .then((response) => {
-            console.log("Dữ liệu đã được sửa thành công:", response.data);
-        })
-        .catch((error) => {
-            console.error("Đã có lỗi xảy ra khi sửa dữ liệu:", error);
-        });
-}
-editData();
-
-
-//Xóa dữ liệu Categories
-const DELETE_URL = "http://localhost:3000/";
-
-const idToDelete = 6;
-
-// Gửi yêu cầu DELETE đến API để xóa dữ liệu
-axios.delete(DELETE_URL + "categories/" + idToDelete)
+axios.get(GET_API + "categories")
     .then((response) => {
-        console.log("Dữ liệu đã được xóa thành công:", response.data);
+        const data = response.data;
+
+        let app = document.getElementById('listCate');
+
+        let lishCate = data;
+
+        let html = ``;
+
+        lishCate.forEach(categories => {
+
+            html += `
+                    <tr>
+                        <td>${categories.id}</td>
+                        <td>${categories.name}</td>
+                        <td><img src="${categories.image}" alt="Image Shirt" width="30%"></td>
+                        <td>${categories.status}</td>
+                        <td><a><button type="button" class="btn btn-warning">Sửa</button></a></td>
+                        <td><button type="button" class="btn btn-primary" onclick="deleteCateID(${categories.id})">Xóa</button></td>
+                    </tr>`;
+
+        });
+
+        app.innerHTML = html;
+        console.log(data);
     })
     .catch((error) => {
-        console.error("Đã có lỗi xảy ra khi xóa dữ liệu:", error);
+        console.error("Đã có lỗi xảy ra khi lấy dữ liệu từ API:", error);
     });
 
+//Thêm dữ liệu
+let saveData = (dataa) => {
+    event.preventDefault();
+
+    let data = new FormData(dataa);
+
+    axios({
+        method: "post",
+        url: "http://localhost:3000/categories",
+        data: {
+            name: data.get('cateName'),
+            image: data.get('cateImage'),
+            status: data.get('cateStatus'),
+        },
+    }).then(function (response) {
+        console.log(response);
+    })
+    .catch((error) => {
+        console.error("Đã có lỗi xảy ra khi thêm dữ liệu:", error);
+    });
+}
+
+//Sửa dữ liệu
+
+
+//Xóa dữ liệu
+const deleteCateID = (id) => {
+
+    axios.delete(GET_API + "categories/" + id)
+        .then((response) => {
+            console.log("Dữ liệu đã được xóa thành công:", response.data);
+
+        })
+        .catch((error) => {
+            console.error("Đã có lỗi xảy ra khi xóa dữ liệu:", error);
+        });
+}
+
+
+//-----------SITE-CATEGORIES------------//
+
+//Hiện thị Categories Site
+axios.get(GET_API + "categories")
+    .then((response) => {
+        const data = response.data;
+
+        let app = document.getElementById('listCateSite');
+
+        let lishCate = data;
+
+        let html = ``;
+
+        lishCate.forEach(categories => {
+            let categoriesId = categories.id;
+
+            html += `<a href="categoriesdm.html?id=${categoriesId}">
+                <img src="${categories.image}" alt="Image Shirt" width="140px">
+                </a>`;
+
+        });
+
+        app.innerHTML = html;
+        console.log(data);
+    })
+    .catch(function (error) {
+        console.log("Đã có lỗi xảy ra khi lấy dữ liệu từ API:", error);
+    });
+
+
+
+//-----------ADMIN-PRODUCTS-------------//
+
+//Hiển thị Products
+axios.get(GET_API + "products")
+    .then((response) => {
+        const data = response.data;
+
+        let app = document.getElementById('prodLish');
+
+        let lishProd = data;
+
+        let html = ``;
+
+        lishProd.forEach(products => {
+
+            html += `
+                    <tr>
+                        <td>${products.id}</td>
+                        <td>${products.name}</td>
+                        <td>${products.price}</td>
+                        <td><img src="${products.image}" alt="Image Shirt" width="30%"></td>
+                        <td>${products.detail}</td>
+                        <td>${products.cate_name}</td>
+                        <td>${products.status}</td>
+                        <td><button type="button" class="btn btn-warning">Sửa</button></td>
+                        <td><button type="button" class="btn btn-primary" onclick="deleteProdID(${products.id})">Xóa</button></td>
+                    </tr>`;
+
+        });
+
+        app.innerHTML = html;
+        console.log(data);
+    })
+    .catch(function (error) {
+        console.log("Xử lý lỗi", error);
+    });
+
+//Thêm dữ liệu 
+let addData = (dataa) => {
+    event.preventDefault();
+
+    let data = new FormData(dataa);
+
+    axios({
+        method: "post",
+        url: "http://localhost:3000/products",
+        data: {
+            name: data.get('nameProd'),
+            cate_name: data.get('cateProd'),
+            price: data.get('priceProd'),
+            detail: data.get('detailProd'),
+            status: data.get('statusProd'),
+            image: data.get('imageProd'),
+        },
+    }).then(function (response) {
+        console.log(response);
+    })
+    .catch((error) => {
+        console.error("Đã có lỗi xảy ra khi thêm dữ liệu:", error);
+    });
+}
+
+//Sửa dữ liệu 
+
+
+
+//Xóa dữ liệu
+const deleteProdID = (id) => {
+
+    axios.delete(GET_API + "products/" + id)
+        .then((response) => {
+            console.log("Dữ liệu đã được xóa thành công:", response.data);
+
+        })
+        .catch((error) => {
+            console.error("Đã có lỗi xảy ra khi xóa dữ liệu:", error);
+        });
+}
+
+
+//-----------SITE-PRODUCTS------------//
+
+//Hiển thị Products Site
+axios.get(GET_API + "products")
+    .then((response) => {
+        const data = response.data;
+
+        let app = document.getElementById('products');
+
+        let lishProd = data;
+
+        let html = ``;
+
+        lishProd.forEach(products => {
+            let productsId = products.id;
+            html += `
+                    <a href="productct.html?id=${productsId}">
+                    <div class="pro">
+                        <img src="${products.image}" alt="Image Shirt">
+                        <div class="des">
+                            <span>
+                                ${products.detail}
+                            </span>
+                            <h5>
+                                ${products.name}
+                            </h5>
+                            <div class="star">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h4>
+                                ${products.price}
+                            </h4>
+                            <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
+                        </div>
+                    </div>
+                    </a>`;
+        });
+
+        app.innerHTML = html;
+        console.log(data);
+    })
+    .catch(function (error) {
+        console.log("Xử lý lỗi", error);
+    });
+
+//Hiển thị Products-New
+axios.get(GET_API + "products")
+    .then((response) => {
+        const data = response.data;
+
+        let app = document.getElementById('products-new');
+
+        let lishProd = data;
+
+        let html = ``;
+
+        lishProd.forEach(products => {
+
+            if (products.detail == "Mới ra mắt") {
+
+                let productsId = products.id;
+
+                html += `
+                    <a href="productct.html?id=${productsId}">
+                    <div class="pro">
+                        <img src="${products.image}" alt="Image Shirt">
+                        <div class="des">
+                            <span>
+                                ${products.detail}
+                            </span>
+                            <h5>
+                                ${products.name}
+                            </h5>
+                            <div class="star">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h4>
+                                ${products.price}
+                            </h4>
+                            <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
+                        </div>
+                    </div>
+                    </a>`;
+            }
+        });
+
+        app.innerHTML = html;
+        console.log(data);
+    })
+    .catch(function (error) {
+        console.log("Xử lý lỗi", error);
+    });
+
+//Hiển thị Products-New
+axios.get(GET_API + "products")
+    .then((response) => {
+        const data = response.data;
+
+        let app = document.getElementById('products-deal');
+
+        let lishProd = data;
+
+        let html = ``;
+
+        lishProd.forEach(products => {
+
+            if (products.detail == "Khuyến mãi") {
+
+                let productsId = products.id;
+
+                html += `
+                    <a href="productct.html?id=${productsId}">
+                    <div class="pro">
+                        <img src="${products.image}" alt="Image Shirt">
+                        <div class="des">
+                            <span>
+                                ${products.detail}
+                            </span>
+                            <h5>
+                                ${products.name}
+                            </h5>
+                            <div class="star">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h4>
+                                ${products.price}
+                            </h4>
+                            <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
+                        </div>
+                    </div>
+                    </a>`;
+            }
+        });
+
+        app.innerHTML = html;
+        console.log(data);
+    })
+    .catch(function (error) {
+        console.log("Xử lý lỗi", error);
+    });
+
+//Hiển thị Product theo Categories
+axios.get(GET_API + "products")
+    .then((response) => {
+        const data = response.data;
+
+        let app = document.getElementById('productsDm');
+
+        let lishProd = data;
+
+        let html = ``;
+
+        lishProd.forEach(products => {
+            let productsId = products.id;
+            html += `
+                    <a href="productct.html?id=${productsId}">
+                    <div class="pro">
+                        <img src="${products.image}" alt="Image Shirt">
+                        <div class="des">
+                            <span>
+                                ${products.detail}
+                            </span>
+                            <h5>
+                                ${products.name}
+                            </h5>
+                            <div class="star">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h4>
+                                ${products.price}
+                            </h4>
+                            <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
+                        </div>
+                    </div>
+                    </a>`;
+        });
+
+        app.innerHTML = html;
+        console.log(data);
+    })
+    .catch(function (error) {
+        console.log("Xử lý lỗi", error);
+    });
 
 
 
